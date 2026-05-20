@@ -1,20 +1,23 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Trigger Job 1') {
             steps {
-                echo 'Building the app'
+                echo 'Starting the first job...'
+                // 'job1-name' must match the exact name of your job in Jenkins
+                build job: 'job1', wait: true
             }
         }
-        stage('Test'){
+        stage('Trigger Job 2') {
             steps {
-                echo 'Testing the app'
+                echo 'Starting the second job...'
+                build job: 'job2', wait: true
             }
         }
-        stage('Deploy') {
-            steps{
-                echo 'Deplying the app'
+        stage('Trigger Job 3') {
+            steps {
+                echo 'Starting the final job...'
+                build job: 'job3', wait: true
             }
         }
     }
