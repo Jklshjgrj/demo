@@ -2,7 +2,7 @@
 const GUIWAN_COORDS = [6.9289, 122.0923];
 
 // Enhanced Mock Data
- INITIAL_REPORTS = [
+ const INITIAL_REPORTS = [
     {
         id: '1',
         title: 'Broken Streetlight',
